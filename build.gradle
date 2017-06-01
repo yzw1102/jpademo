@@ -1,0 +1,26 @@
+group 'com.star'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url 'http://10.0.250.77:8081/artifactory/plugins-release'
+    }
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'org.springframework:spring-context:4.2.0.RELEASE'
+    compile 'org.springframework:spring-orm:4.2.0.RELEASE'
+    compile 'org.springframework:spring-test:4.2.0.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:1.8.2.RELEASE'
+    compile 'org.hibernate:hibernate-entitymanager:5.1.0.Final'
+    compile 'mysql:mysql-connector-java:5.1.38'
+}
