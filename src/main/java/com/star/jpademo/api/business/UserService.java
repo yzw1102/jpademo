@@ -1,6 +1,7 @@
 package com.star.jpademo.api.business;
 
 import com.star.jpademo.domain.User;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -11,12 +12,15 @@ public interface UserService {
 
     void save(User user);
 
-    void update(User user);
-
-    void delete(Integer id);
-
     User get(Integer id);
 
-    List<User> list();
+    List<User> findByName(String name);
 
+    List<User> findByName(String name,Integer pageNumber,Integer pageSize);
+
+    List<User> findByName(String name, Sort.Direction direction, String columnName);
+
+    List<User> findByAge(Integer age);
+
+    List<User> findAll(String name,Integer age);
 }

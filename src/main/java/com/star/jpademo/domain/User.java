@@ -17,6 +17,9 @@ public class User implements Serializable{
     @Column
     private String name;
 
+    @Column
+    private Integer age;
+
 
     public Integer getId() {
         return id;
@@ -34,4 +37,11 @@ public class User implements Serializable{
         this.name = name;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }

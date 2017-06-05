@@ -2,7 +2,6 @@ package com.star.jpademo;
 
 import com.star.jpademo.api.business.UserService;
 import com.star.jpademo.domain.User;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,9 @@ import java.util.List;
  * Created by User on 2017/6/1.
  */
 
-@ContextConfiguration("classpath:applicationContext.xml")
+@ContextConfiguration("classpath:applicationContext2.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class JpaTest {
+public class JpaTest2 {
 
     @Autowired
     UserService userService;
@@ -30,7 +29,7 @@ public class JpaTest {
         userService.save(user);
     }
 
-//    @Test
+    @Test
     public void test2(){
 //        System.out.println(userService.get(2).getName());
         List<User> userList = userService.findByName("ye");
@@ -55,7 +54,7 @@ public class JpaTest {
         System.out.println(userList.size());
     }
 
-    @Test
+//    @Test
     public void testSpecification(){
         List<User> userList = userService.findAll("ye",20);
         System.out.println(userList.size());
